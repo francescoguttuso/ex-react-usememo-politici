@@ -1,3 +1,6 @@
+import { memo } from "react";
+
+
 function PoliticianCard(props) {
     console.log("PoliticianCard render:", props.politician.name);
     return (
@@ -24,4 +27,4 @@ function PoliticianCard(props) {
     )
 }
 
-export default PoliticianCard
+export default memo(PoliticianCard)
