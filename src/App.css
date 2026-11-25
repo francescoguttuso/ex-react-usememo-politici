@@ -9,16 +9,35 @@
 .app {
   min-height: 100vh;
   padding: 40px;
-  background-color: #f1f5f9;
+  background: #f1f5f9;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 /* TITOLO */
 .page-title {
   text-align: center;
-  font-size: 40px;
   color: #1e293b;
-  margin-bottom: 40px;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+/* RICERCA */
+.app input {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 18px;
+  margin: 0 auto 35px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.app input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
 
 /* CARD POLITICI */
@@ -27,23 +46,18 @@
   vertical-align: top;
   width: 300px;
   margin: 15px;
-  list-style: none;
-  background-color: white;
+  background: white;
   border-radius: 15px;
   overflow: hidden;
+  list-style: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-  padding: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* HOVER CARD */
+/* HOVER */
 .politician-card:hover {
   transform: translateY(-5px);
-}
-
-/* LISTA */
-.politician-card li {
-  list-style: none;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
 }
 
 /* IMMAGINI */
@@ -53,7 +67,6 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  margin: 0 auto;
 }
 
 /* NOME */
@@ -78,7 +91,7 @@
   line-height: 1.6;
 }
 
-/* RESPONSIVE - SMARTPHONE */
+/* RESPONSIVE */
 @media (max-width: 600px) {
   .app {
     padding: 20px;
@@ -92,7 +105,6 @@
 
   .page-title {
     font-size: 30px;
-    margin-bottom: 25px;
   }
 
   .politician-image {
