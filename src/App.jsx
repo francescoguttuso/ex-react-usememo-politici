@@ -11,22 +11,36 @@ function App() {
       .then(data => setPoliticians(data))
       .catch(error => console.error(error))
   }, []);
-  console.log(politicians)
+
   return (
-    <div>
-      <h1>POLITICIANS</h1>
+    <div className="app">
+      <h1 className="page-title">POLITICIANS</h1>
+
       {politicians.map((politician) => {
         return (
-          <li key={politician.id}>
-            <h2>Name:{politician.name}</h2>
-            <img src={politician.image} alt={politician.name} />
-            <p>Position:{politician.position}</p>
-            <p>Biography:{politician.biography}</p>
-          </li>
-        )
+          <ul className="politician-card" key={politician.id}>
+            <li>
+              <h2 className="politician-name">Name: {politician.name}</h2>
+
+              <img
+                className="politician-image"
+                src={politician.image}
+                alt={politician.name}
+              />
+
+              <p className="politician-position">
+                Position: {politician.position}
+              </p>
+
+              <p className="politician-biography">
+                Biography: {politician.biography}
+              </p>
+            </li>
+          </ul>
+        );
       })}
     </div>
-  )
+  );
 }
 
 export default App
