@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import './App.css'
-
+import PoliticianCard from "./components/PoliticianCard";
 
 function App() {
   const [politicians, setPoliticians] = useState([]);
@@ -23,27 +23,11 @@ function App() {
         onChange={e => setSearch(e.target.value)} />
       {filteredPoliticians.map((politician) => {
         return (
-          <ul className="politician-card" key={politician.id}>
-            <li>
-              <h2 className="politician-name">Name: {politician.name}</h2>
+          <PoliticianCard politician={politician} key={politician.id} />
 
-              <img
-                className="politician-image"
-                src={politician.image}
-                alt={politician.name}
-              />
-
-              <p className="politician-position">
-                Position: {politician.position}
-              </p>
-
-              <p className="politician-biography">
-                Biography: {politician.biography}
-              </p>
-            </li>
-          </ul>
         );
       })}
+
     </div>
   );
 }
